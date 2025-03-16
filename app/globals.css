@@ -1,26 +1,89 @@
 @import "tailwindcss";
 
 :root {
-  --background: #ffffff;
-  --foreground: #171717;
+  --background: #232B32;
+  --foreground: #ffffff;
+  --brand-color: #00E2D6;
+  --secondary-bg: #2d3741;
+  --text-light: #e0e0e0;
+  --text-muted: #a0a0a0;
 }
 
 @theme inline {
   --color-background: var(--background);
   --color-foreground: var(--foreground);
+  --color-brand: var(--brand-color);
   --font-sans: var(--font-geist-sans);
   --font-mono: var(--font-geist-mono);
-}
-
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
-  }
 }
 
 body {
   background: var(--background);
   color: var(--foreground);
-  font-family: Arial, Helvetica, sans-serif;
+  font-family: var(--font-sans), Arial, Helvetica, sans-serif;
+}
+
+.brand-gradient {
+  background: linear-gradient(90deg, var(--brand-color) 0%, #4EEBC5 100%);
+}
+
+.btn-primary {
+  background-color: var(--brand-color);
+  color: var(--background);
+  transition: all 0.3s ease;
+}
+
+.btn-primary:hover {
+  background-color: #00c5bb;
+  transform: translateY(-2px);
+}
+
+.btn-secondary {
+  border: 2px solid var(--brand-color);
+  color: var(--brand-color);
+  background-color: transparent;
+  transition: all 0.3s ease;
+}
+
+.btn-secondary:hover {
+  background-color: rgba(0, 226, 214, 0.1);
+  transform: translateY(-2px);
+}
+
+.card {
+  background-color: var(--secondary-bg);
+  border-radius: 0.5rem;
+  overflow: hidden;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.2);
+}
+
+.section-heading {
+  position: relative;
+  display: inline-block;
+  margin-bottom: 2rem;
+}
+
+.section-heading::after {
+  content: '';
+  position: absolute;
+  bottom: -10px;
+  left: 0;
+  width: 60px;
+  height: 4px;
+  background-color: var(--brand-color);
+}
+
+/* Add smooth scrolling behavior */
+html {
+  scroll-behavior: smooth;
+}
+
+/* Add scroll margin to section headings to account for fixed navbar */
+section[id] {
+  scroll-margin-top: 80px;
 }
