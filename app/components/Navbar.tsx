@@ -1,7 +1,6 @@
 "use client";
 
 import { useState } from "react";
-// eslint-disable-next-line @typescript-eslint/no-unused-vars
 import Image from "next/image";
 import Link from "next/link";
 
@@ -13,6 +12,13 @@ export default function Navbar() {
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex justify-between h-20">
           <div className="flex items-center">
+            <Image 
+              src="/images/tecsudo-logo.png"
+              alt="TecSudo Logo"
+              width={40}
+              height={40}
+              className="mr-3"
+            />
             <Link href="/" className="flex-shrink-0 flex items-center">
               <span className="text-[#00E2D6] font-bold text-2xl">Tecsudo</span>
             </Link>

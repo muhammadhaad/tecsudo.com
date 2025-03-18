@@ -14,7 +14,7 @@ const geistMono = Geist_Mono({
 });
 
 export const metadata: Metadata = {
-  title: 'Tecsudo | Custom Software Development Solutions',
+  title: 'Tecsudo | Transforming Ideas into Intelligent Solutions',
   description: 'Tecsudo provides custom software development, mobile app development, and business intelligence solutions to help businesses scale and succeed in the digital landscape.',
   keywords: 'software development, web development, mobile app development, business intelligence, custom software solutions',
   authors: [{ name: 'Tecsudo Team' }],
@@ -33,13 +33,13 @@ export const metadata: Metadata = {
     type: 'website',
     locale: 'en_US',
     url: 'https://tecsudo.com',
-    title: 'Tecsudo | Custom Software Development Solutions',
+    title: 'Tecsudo | Transforming Ideas into Intelligent Solutions',
     description: 'Custom software development, mobile app development, and business intelligence solutions for growing businesses.',
     siteName: 'Tecsudo',
   },
   twitter: {
     card: 'summary_large_image',
-    title: 'Tecsudo | Custom Software Development Solutions',
+    title: 'Tecsudo | Transforming Ideas into Intelligent Solutions',
     description: 'Custom software development, mobile app development, and business intelligence solutions for growing businesses.',
   },
   icons: {

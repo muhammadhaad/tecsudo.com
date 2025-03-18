@@ -2,7 +2,7 @@ import type { NextConfig } from "next";
 
 const nextConfig: NextConfig = {
   images: {
-    domains: [],
+    domains: ['avatars.githubusercontent.com'],
     formats: ['image/avif', 'image/webp'],
   },
   reactStrictMode: true,
