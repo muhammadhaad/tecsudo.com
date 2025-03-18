@@ -18,24 +18,76 @@ export default function ContactForm() {
     message: '',
   });
 
+  const [validationErrors, setValidationErrors] = useState<{
+    name?: string;
+    email?: string;
+    message?: string;
+  }>({});
+
   const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
     const { name, value } = e.target;
     setFormData(prev => ({
       ...prev,
       [name]: value
     }));
+    
+    // Clear validation errors when user types
+    if (validationErrors[name as keyof typeof validationErrors]) {
+      setValidationErrors(prev => ({
+        ...prev,
+        [name]: undefined
+      }));
+    }
+  };
+
+  const validateEmail = (email: string): boolean => {
+    const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+    return emailRegex.test(email);
+  };
+
+  const validateForm = (): boolean => {
+    const errors: {
+      name?: string;
+      email?: string;
+      message?: string;
+    } = {};
+    
+    if (!formData.name.trim()) {
+      errors.name = 'Name is required';
+    }
+    
+    if (!formData.email.trim()) {
+      errors.email = 'Email is required';
+    } else if (!validateEmail(formData.email)) {
+      errors.email = 'Please enter a valid email address';
+    }
+    
+    if (!formData.message.trim()) {
+      errors.message = 'Message is required';
+    }
+    
+    setValidationErrors(errors);
+    return Object.keys(errors).length === 0;
   };
 
   const handleSubmit = async (e: FormEvent) => {
     e.preventDefault();
     
+    // Reset previous submission status
+    setFormStatus({
+      isSubmitting: false,
+      isSubmitted: false,
+      isError: false,
+      message: ''
+    });
+    
     // Validate form
-    if (!formData.name || !formData.email || !formData.message) {
+    if (!validateForm()) {
       setFormStatus({
         isSubmitting: false,
         isSubmitted: false,
         isError: true,
-        message: 'Please fill out all required fields.'
+        message: 'Please correct the errors in the form.'
       });
       return;
     }
@@ -48,18 +100,18 @@ export default function ContactForm() {
 
     try {
       // This would be replaced with your actual API endpoint
-      // const response = await fetch('/api/contact', {
-      //   method: 'POST',
-      //   headers: {
-      //     'Content-Type': 'application/json',
-      //   },
-      //   body: JSON.stringify(formData),
-      // });
+      const response = await fetch('/api/contact', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+        },
+        body: JSON.stringify(formData),
+      });
       
-      // Simulate API call with timeout
-      await new Promise(resolve => setTimeout(resolve, 1000));
+      // If you want to keep the simulation for testing, uncomment this:
+      // await new Promise(resolve => setTimeout(resolve, 1000));
       
-      // if (!response.ok) throw new Error('Failed to submit form');
+      if (!response.ok) throw new Error('Failed to submit form');
       
       setFormStatus({
         isSubmitting: false,
@@ -102,9 +154,12 @@ export default function ContactForm() {
             value={formData.name}
             onChange={handleChange}
             required
-            className="w-full px-4 py-3 bg-[#1a2229] border border-[#3a4750] rounded-lg focus:outline-none focus:ring-2 focus:ring-[#00E2D6] text-white"
+            className={`w-full px-4 py-3 bg-[#1a2229] border ${validationErrors.name ? 'border-red-500' : 'border-[#3a4750]'} rounded-lg focus:outline-none focus:ring-2 focus:ring-[#00E2D6] text-white`}
             placeholder="Your name"
           />
+          {validationErrors.name && (
+            <p className="mt-1 text-sm text-red-400">{validationErrors.name}</p>
+          )}
         </div>
         
         <div>
@@ -118,9 +173,12 @@ export default function ContactForm() {
             value={formData.email}
             onChange={handleChange}
             required
-            className="w-full px-4 py-3 bg-[#1a2229] border border-[#3a4750] rounded-lg focus:outline-none focus:ring-2 focus:ring-[#00E2D6] text-white"
+            className={`w-full px-4 py-3 bg-[#1a2229] border ${validationErrors.email ? 'border-red-500' : 'border-[#3a4750]'} rounded-lg focus:outline-none focus:ring-2 focus:ring-[#00E2D6] text-white`}
             placeholder="your.email@example.com"
           />
+          {validationErrors.email && (
+            <p className="mt-1 text-sm text-red-400">{validationErrors.email}</p>
+          )}
         </div>
         
         <div>
@@ -165,9 +223,12 @@ export default function ContactForm() {
           onChange={handleChange}
           required
           rows={5}
-          className="w-full px-4 py-3 bg-[#1a2229] border border-[#3a4750] rounded-lg focus:outline-none focus:ring-2 focus:ring-[#00E2D6] text-white resize-none"
+          className={`w-full px-4 py-3 bg-[#1a2229] border ${validationErrors.message ? 'border-red-500' : 'border-[#3a4750]'} rounded-lg focus:outline-none focus:ring-2 focus:ring-[#00E2D6] text-white resize-none`}
           placeholder="Tell us about your project and requirements..."
         ></textarea>
+        {validationErrors.message && (
+          <p className="mt-1 text-sm text-red-400">{validationErrors.message}</p>
+        )}
       </div>
       
       {formStatus.message && (

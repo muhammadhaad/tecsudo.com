@@ -4,6 +4,7 @@ import React, { useState, useEffect } from 'react';
 import Navbar from '../components/Navbar';
 import Footer from '../components/Footer';
 import Link from 'next/link';
+import { contactInfo } from '../config/contact';
 
 export default function PrivacyPolicy() {
   const [formattedDate, setFormattedDate] = useState('');
@@ -83,9 +84,9 @@ export default function PrivacyPolicy() {
               If you have any questions about this privacy policy or our privacy practices, please contact us at:
             </p>
             <p className="text-gray-300">
-              Email: <a href="mailto:privacy@tecsudo.com" className="text-[#00E2D6] hover:underline">privacy@tecsudo.com</a><br />
-              Phone: (415) 555-1234<br />
-              Address: 123 Tech Plaza, Suite 400, San Francisco, CA 94105
+              Email: <a href={`mailto:${contactInfo.privacyEmail}`} className="text-[#00E2D6] hover:underline">{contactInfo.privacyEmail}</a><br />
+              Phone: {contactInfo.phone}<br />
+              Address: {contactInfo.completeAddress}
             </p>
             
             <div className="mt-12 flex">

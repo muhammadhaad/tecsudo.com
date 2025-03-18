@@ -5,6 +5,7 @@ import ContactForm from "./components/ContactForm";
 import PortfolioSection from './components/PortfolioSection';
 import TeamSection from './components/TeamSection';
 import TechnologiesSection from './components/TechnologiesSection';
+import { contactInfo } from "./config/contact";
 
 export default function Home() {
   return (
@@ -12,8 +13,8 @@ export default function Home() {
       <Navbar />
       
       {/* Hero Section */}
-      <section className="pt-32 pb-20 px-4 sm:px-6 lg:px-8">
-        <div className="max-w-7xl mx-auto">
+      <section className="min-h-screen flex items-center pt-20 pb-12 px-4 sm:px-6 lg:px-8 bg-[#232B32]">
+        <div className="max-w-7xl mx-auto w-full">
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
             <div>
               <h1 className="text-4xl sm:text-5xl font-bold mb-6">
@@ -47,7 +48,7 @@ export default function Home() {
       </section>
       
       {/* Services Section */}
-      <section id="services" className="py-20 px-4 sm:px-6 lg:px-8 bg-[#2d3741]">
+      <section id="services" className="py-24 md:py-32 px-4 sm:px-6 lg:px-8 bg-[#2d3741]">
         <div className="max-w-7xl mx-auto">
           <h2 className="section-heading text-3xl sm:text-4xl font-bold">Our Services</h2>
           <div className="grid grid-cols-1 md:grid-cols-3 gap-8 mt-12">
@@ -195,11 +196,10 @@ export default function Home() {
                     </div>
                     <div>
                       <h4 className="text-lg font-semibold mb-1 text-white">Email</h4>
-                      <a href="mailto:contact@tecsudo.com" className="text-[#00E2D6] hover:underline block mb-1">contact@tecsudo.com</a>
+                      <a href={`mailto:${contactInfo.contactEmail}`} className="text-[#00E2D6] hover:underline block mb-1">{contactInfo.contactEmail}</a>
                       <p className="text-gray-400 text-sm">For general inquiries</p>
                     </div>
                   </div>
-                  
                   <div className="flex items-start">
                     <div className="h-12 w-12 rounded-lg bg-[#00E2D6]/10 flex items-center justify-center mr-4 flex-shrink-0">
                       <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="#00E2D6" className="h-6 w-6">
@@ -208,7 +208,7 @@ export default function Home() {
                     </div>
                     <div>
                       <h4 className="text-lg font-semibold mb-1 text-white">Phone</h4>
-                      <a href="tel:+14155551234" className="text-[#00E2D6] hover:underline block mb-1">(415) 555-1234</a>
+                      <a href={`tel:${contactInfo.phone}`}className="text-[#00E2D6] hover:underline block mb-1">{contactInfo.phone}</a>
                       <p className="text-gray-400 text-sm">Mon-Fri from 9am to 6pm</p>
                     </div>
                   </div>
@@ -222,8 +222,8 @@ export default function Home() {
                     </div>
                     <div>
                       <h4 className="text-lg font-semibold mb-1 text-white">Office</h4>
-                      <p className="text-[#00E2D6] block mb-1">123 Tech Plaza, Suite 400</p>
-                      <p className="text-gray-400 text-sm">San Francisco, CA 94105</p>
+                      <p className="text-[#00E2D6] block mb-1">{contactInfo.address}{contactInfo.address1}{contactInfo.city}{contactInfo.state}</p>
+                      <p className="text-gray-400 text-sm">{contactInfo.country}</p>
                     </div>
                   </div>
                 </div>

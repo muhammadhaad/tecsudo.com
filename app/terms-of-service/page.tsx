@@ -2,6 +2,7 @@ import React from 'react';
 import Navbar from '../components/Navbar';
 import Footer from '../components/Footer';
 import Link from 'next/link';
+import { contactInfo } from '../config/contact';
 
 export default function TermsOfService() {
   return (
@@ -60,9 +61,9 @@ export default function TermsOfService() {
               If you have any questions about these Terms, please contact us at:
             </p>
             <p className="text-gray-300">
-              Email: <a href="mailto:legal@tecsudo.com" className="text-[#00E2D6] hover:underline">legal@tecsudo.com</a><br />
-              Phone: (415) 555-1234<br />
-              Address: 123 Tech Plaza, Suite 400, San Francisco, CA 94105
+              Email: <a href={`mailto:${contactInfo.legalEmail}`} className="text-[#00E2D6] hover:underline">{contactInfo.legalEmail}</a><br />
+              Phone: {contactInfo.phone}<br />
+              Address: {contactInfo.completeAddress}
             </p>
             
             <div className="mt-12 flex">
