@@ -7,6 +7,9 @@ import { projects } from '../config/portfolio';
 import { motion } from 'framer-motion';
 
 export default function PortfolioSection() {
+  // Filter to only show featured projects
+  const featuredProjects = projects.filter(project => project.featured);
+
   return (
     <section id="portfolio" className="py-20 px-4 sm:px-6 lg:px-8 bg-[#232B32]">
       <div className="max-w-7xl mx-auto">
@@ -21,11 +24,11 @@ export default function PortfolioSection() {
             Explore our recent projects and see how we&apos;ve helped businesses transform their digital presence.
           </p>
         </motion.div>
-        
+
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 mt-12">
-          {projects.map((project, index) => (
-            <motion.div 
-              key={project.id} 
+          {featuredProjects.map((project, index) => (
+            <motion.div
+              key={project.id}
               className="card p-6 rounded-lg overflow-hidden bg-[#2d3741] hover:bg-[#343e48] transition-all duration-300"
               initial={{ opacity: 0, y: 20 }}
               whileInView={{ opacity: 1, y: 0 }}
@@ -34,8 +37,8 @@ export default function PortfolioSection() {
             >
               <div className="mb-6 relative h-48 w-full rounded-lg overflow-hidden">
                 {project.images?.thumbnail ? (
-                  <Image 
-                    src={project.images.thumbnail} 
+                  <Image
+                    src={project.images.thumbnail}
                     alt={project.title}
                     fill
                     className="object-cover transition-transform duration-500 hover:scale-110"
@@ -48,10 +51,10 @@ export default function PortfolioSection() {
                   </div>
                 )}
               </div>
-              
+
               <h3 className="text-xl font-bold mb-3">{project.title}</h3>
               <p className="text-gray-300 mb-4">{project.description}</p>
-              
+
               <div className="mb-6">
                 <h4 className="text-sm font-semibold mb-2 text-[#00E2D6]">Key Features</h4>
                 <ul className="text-gray-300 space-y-2">
@@ -68,7 +71,7 @@ export default function PortfolioSection() {
                   )}
                 </ul>
               </div>
-              
+
               <div className="flex justify-between items-center mt-auto">
                 <div className="flex flex-wrap gap-2">
                   {project.technologies?.slice(0, 3).map((tech, techIndex) => (
@@ -82,8 +85,8 @@ export default function PortfolioSection() {
                     </span>
                   )}
                 </div>
-                
-                <Link 
+
+                <Link
                   href={`/portfolio/${project.slug}`}
                   className="text-[#00E2D6] hover:text-white flex items-center transition-colors"
                 >
@@ -96,7 +99,7 @@ export default function PortfolioSection() {
             </motion.div>
           ))}
         </div>
-        
+
         <div className="text-center mt-12">
           <Link href="/portfolio" className="btn-primary px-8 py-3 rounded-full font-medium inline-block bg-[#00E2D6] text-[#1e2730] hover:bg-[#00c2b8] transition-colors">
             View All Projects

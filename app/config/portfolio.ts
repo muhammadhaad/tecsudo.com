@@ -1,6 +1,8 @@
 export interface Project {
     id: string;
     title: string;
+    featured: boolean;
+    categories: string[];
     description: string;
     features: string[];
     slug: string;
@@ -27,9 +29,11 @@ export interface Project {
 export const projects: Project[] = [
     {
         id: "1",
+        featured: true,
         title: "E-Commerce Platform",
         slug: "e-commerce-platform",
         description: "A full-featured e-commerce solution with integrated payment processing and inventory management.",
+        categories: ["E-Commerce", "Payment Processing", "Inventory Management"],
         features: [
             "Responsive design for all devices",
             "Secure payment processing",
@@ -56,7 +60,7 @@ export const projects: Project[] = [
             position: "CTO, RetailTech Solutions"
         },
         images: {
-            thumbnail: "/images/projects/ecommerce-thumbnail.jpg",
+            thumbnail: "/images/projects/ecommerce-thumbnail.webp",
             gallery: [
                 "/images/projects/ecommerce-1.jpg",
                 "/images/projects/ecommerce-2.jpg",
@@ -66,9 +70,11 @@ export const projects: Project[] = [
     },
     {
         id: "2",
+        featured: true,
         title: "Healthcare Management System",
         slug: "healthcare-management-system",
         description: "A comprehensive healthcare management solution for clinics and small hospitals.",
+        categories: ["Healthcare", "Management System", "Medical"],
         features: [
             "Patient records management",
             "Appointment scheduling",
@@ -105,9 +111,11 @@ export const projects: Project[] = [
     },
     {
         id: "3",
+        featured: true,
         title: "Financial Analytics Dashboard",
         slug: "financial-analytics-dashboard",
         description: "An interactive dashboard for financial data visualization and analysis.",
+        categories: ["Financial", "Analytics", "Dashboard"],
         features: [
             "Real-time data visualization",
             "Customizable reports and charts",
