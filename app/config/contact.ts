@@ -23,5 +23,5 @@ export const contactInfo = {
     },
 
     // Business hours
-    businessHours: 'Mon-Fri from 9am to 6pm'
+    businessHours: 'Mon-Fri from 9am to 6pm (PKT)'
 };

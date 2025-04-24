@@ -21,22 +21,30 @@ export default function Navbar() {
               className="mr-3"
             />
             <Link href="/" className="flex-shrink-0 flex items-center">
-              <span className="text-white font-bold text-2xl">{contactInfo.companyName}</span>
+              <span className="text-white font-bold text-2xl">
+                {contactInfo.companyName}
+              </span>
               {/* <span className="text-[#00E2D6] font-bold text-2xl">{contactInfo.companyName}</span> */}
             </Link>
           </div>
 
           <div className="hidden md:flex items-center space-x-8">
-            <Link href="#services" className="text-white hover:text-[#00E2D6] transition-colors">
+            <Link
+              href="#services"
+              className="text-white hover:text-[#00E2D6] transition-colors"
+            >
               Services
             </Link>
-            <Link href="#portfolio" className="text-white hover:text-[#00E2D6] transition-colors">
-              Portfolio
-            </Link>
-            <Link href="#team" className="text-white hover:text-[#00E2D6] transition-colors">
+            <Link
+              href="#team"
+              className="text-white hover:text-[#00E2D6] transition-colors"
+            >
               Team
             </Link>
-            <Link href="#technologies" className="text-white hover:text-[#00E2D6] transition-colors">
+            <Link
+              href="#technologies"
+              className="text-white hover:text-[#00E2D6] transition-colors"
+            >
               Technologies
             </Link>
             <Link
@@ -53,12 +61,34 @@ export default function Navbar() {
               className="text-white hover:text-[#00E2D6]"
             >
               {isMenuOpen ? (
-                <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" className="h-6 w-6">
-                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M6 18L18 6M6 6l12 12" />
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  fill="none"
+                  viewBox="0 0 24 24"
+                  stroke="currentColor"
+                  className="h-6 w-6"
+                >
+                  <path
+                    strokeLinecap="round"
+                    strokeLinejoin="round"
+                    strokeWidth={2}
+                    d="M6 18L18 6M6 6l12 12"
+                  />
                 </svg>
               ) : (
-                <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" className="h-6 w-6">
-                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M4 6h16M4 12h16M4 18h16" />
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  fill="none"
+                  viewBox="0 0 24 24"
+                  stroke="currentColor"
+                  className="h-6 w-6"
+                >
+                  <path
+                    strokeLinecap="round"
+                    strokeLinejoin="round"
+                    strokeWidth={2}
+                    d="M4 6h16M4 12h16M4 18h16"
+                  />
                 </svg>
               )}
             </button>
@@ -77,13 +107,7 @@ export default function Navbar() {
             >
               Services
             </Link>
-            <Link
-              href="#portfolio"
-              className="text-white hover:text-[#00E2D6] transition-colors"
-              onClick={() => setIsMenuOpen(false)}
-            >
-              Portfolio
-            </Link>
+
             <Link
               href="#team"
               className="text-white hover:text-[#00E2D6] transition-colors"
@@ -110,4 +134,4 @@ export default function Navbar() {
       )}
     </nav>
   );
-} 
+}
