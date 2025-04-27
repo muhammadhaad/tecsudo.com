@@ -2,6 +2,7 @@ import React from "react";
 import Link from "next/link";
 import Image from "next/image";
 import { contactInfo } from "../config/contact";
+import { services } from "../config/services";
 
 export default function Footer() {
   return (
@@ -91,15 +92,6 @@ export default function Footer() {
             <ul className="space-y-3">
               <li>
                 <Link
-                  href="#services"
-                  className="text-gray-300 hover:text-[#00E2D6] transition-colors"
-                >
-                  Services
-                </Link>
-              </li>
-
-              <li>
-                <Link
                   href="#team"
                   className="text-gray-300 hover:text-[#00E2D6] transition-colors"
                 >
@@ -108,10 +100,10 @@ export default function Footer() {
               </li>
               <li>
                 <Link
-                  href="#technologies"
+                  href="#services"
                   className="text-gray-300 hover:text-[#00E2D6] transition-colors"
                 >
-                  Technologies
+                  Services
                 </Link>
               </li>
               <li>
@@ -129,46 +121,16 @@ export default function Footer() {
           <div>
             <h3 className="text-lg font-semibold mb-6">Our Services</h3>
             <ul className="space-y-3">
-              <li>
-                <Link
-                  href="#services"
-                  className="text-gray-300 hover:text-[#00E2D6] transition-colors"
-                >
-                  Web Development
-                </Link>
-              </li>
-              <li>
-                <Link
-                  href="#services"
-                  className="text-gray-300 hover:text-[#00E2D6] transition-colors"
-                >
-                  Mobile App Development
-                </Link>
-              </li>
-              <li>
-                <Link
-                  href="#services"
-                  className="text-gray-300 hover:text-[#00E2D6] transition-colors"
-                >
-                  Custom Software Solutions
-                </Link>
-              </li>
-              <li>
-                <Link
-                  href="#services"
-                  className="text-gray-300 hover:text-[#00E2D6] transition-colors"
-                >
-                  UI/UX Design
-                </Link>
-              </li>
-              <li>
-                <Link
-                  href="#services"
-                  className="text-gray-300 hover:text-[#00E2D6] transition-colors"
-                >
-                  Business Intelligence
-                </Link>
-              </li>
+              {services.map((service, index) => (
+                <li key={index}>
+                  <Link
+                    href="#services"
+                    className="text-gray-300 hover:text-[#00E2D6] transition-colors"
+                  >
+                    {service.title}
+                  </Link>
+                </li>
+              ))}
             </ul>
           </div>
 

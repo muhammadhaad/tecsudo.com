@@ -30,22 +30,16 @@ export default function Navbar() {
 
           <div className="hidden md:flex items-center space-x-8">
             <Link
-              href="#services"
-              className="text-white hover:text-[#00E2D6] transition-colors"
-            >
-              Services
-            </Link>
-            <Link
               href="#team"
               className="text-white hover:text-[#00E2D6] transition-colors"
             >
               Team
             </Link>
             <Link
-              href="#technologies"
+              href="#services"
               className="text-white hover:text-[#00E2D6] transition-colors"
             >
-              Technologies
+              Services
             </Link>
             <Link
               href="#contact"
@@ -116,11 +110,11 @@ export default function Navbar() {
               Team
             </Link>
             <Link
-              href="#technologies"
+              href="#services"
               className="text-white hover:text-[#00E2D6] transition-colors"
               onClick={() => setIsMenuOpen(false)}
             >
-              Technologies
+              Services
             </Link>
             <Link
               href="#contact"
