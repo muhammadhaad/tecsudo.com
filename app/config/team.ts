@@ -1,8 +1,11 @@
-export const teamMembers = [
+// config/team.ts
+import { TeamMember } from '../types/team';
+
+export const teamMembers: TeamMember[] = [
     {
         name: 'Muneeb ul Hassan',
         role: 'CV & Co-Founder',
-        bio: 'Muneeb drives the company’s vision with deep experience at the intersection of technology and business, leading strategic initiatives, scalable innovations, and sustainable growth.',
+        bio: 'Muneeb drives the company\'s vision with deep experience at the intersection of technology and business, leading strategic initiatives, scalable innovations, and sustainable growth.',
         skills: ['Business Strategy', 'Software Architecture', 'Product Management'],
         social: {
             github: 'https://github.com/mh8633b',
