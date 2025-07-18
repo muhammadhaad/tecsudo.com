@@ -23,7 +23,7 @@ export const teamMembers: TeamMember[] = [
             // twitter: 'https://twitter.com/_muhammadhaad',
             github: 'https://github.com/muhammadhaad',
             linkedin: 'https://linkedin.com/in/muhammadhaad',
-            // portfolio: 'https://muhammadhaad.is-a.dev'
+            portfolio: 'https://muhammadhaad.is-a.dev'
         },
         image: 'https://avatars.githubusercontent.com/u/37215158?v=4'
     },
