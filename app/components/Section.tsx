@@ -13,7 +13,7 @@ export default function Section({
   className = "",
   background = "primary",
 }: SectionProps) {
-  const bgColor = background === "primary" ? "bg-[#232B32]" : "bg-[#2d3741]";
+  const bgColor = background === "primary" ? "bg-background" : "bg-secondary-bg";
 
   return (
     <section

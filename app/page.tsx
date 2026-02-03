@@ -2,7 +2,6 @@ import Image from "next/image";
 import Navbar from "./components/Navbar";
 import Footer from "./components/Footer";
 import ContactForm from "./components/ContactForm";
-import TeamSection from "./components/TeamSection";
 import { contactInfo } from "./config/contact";
 import ServicesSection from "./components/ServicesSection";
 
@@ -12,13 +11,13 @@ export default function Home() {
       <Navbar />
 
       {/* Hero Section */}
-      <section className="min-h-screen flex items-center pt-20 pb-12 px-4 sm:px-6 lg:px-8 bg-[#232B32]">
+      <section className="min-h-screen flex items-center pt-20 pb-12 px-4 sm:px-6 lg:px-8 bg-background">
         <div className="max-w-7xl mx-auto w-full">
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
             <div>
               <h1 className="text-4xl sm:text-5xl font-bold mb-6">
                 Transforming Ideas into
-                <span className="text-[#00E2D6]"> Intelligent Solutions</span>
+                <span className="text-brand"> Intelligent Solutions</span>
               </h1>
               <p className="text-xl text-gray-300 mb-8">
                 We build custom web applications, mobile solutions, and business
@@ -53,15 +52,10 @@ export default function Home() {
         </div>
       </section>
 
-      {/* Team Section */}
-      <section id="team" className="py-20 px-4 sm:px-6 lg:px-8 bg-[#2d3741]">
-        <TeamSection />
-      </section>
-
       {/* Services Section */}
       <section
         id="services"
-        className="py-20 px-4 sm:px-6 lg:px-8 bg-[#232B32]"
+        className="py-20 px-4 sm:px-6 lg:px-8 bg-background"
       >
         <ServicesSection />
       </section>
@@ -69,11 +63,11 @@ export default function Home() {
       {/* Contact Section */}
       <section
         id="contact"
-        className="py-20 px-4 sm:px-6 lg:px-8 bg-[#2d3741] relative overflow-hidden"
+        className="py-20 px-4 sm:px-6 lg:px-8 bg-secondary-bg relative overflow-hidden"
       >
         {/* Background decorative elements */}
-        <div className="absolute top-0 right-0 w-64 h-64 bg-[#00E2D6]/5 rounded-full -mr-32 -mt-32 blur-3xl"></div>
-        <div className="absolute bottom-0 left-0 w-96 h-96 bg-[#00E2D6]/5 rounded-full -ml-48 -mb-48 blur-3xl"></div>
+        <div className="absolute top-0 right-0 w-64 h-64 bg-brand/5 rounded-full -mr-32 -mt-32 blur-3xl"></div>
+        <div className="absolute bottom-0 left-0 w-96 h-96 bg-brand/5 rounded-full -ml-48 -mb-48 blur-3xl"></div>
 
         <div className="max-w-7xl mx-auto relative z-10">
           <h2 className="section-heading text-3xl sm:text-4xl font-bold">
@@ -84,23 +78,23 @@ export default function Home() {
             solutions? Our team is here to help you succeed.
           </p>
 
-          <div className="bg-[#232B32] rounded-2xl shadow-xl overflow-hidden mt-16">
+          <div className="bg-background rounded-2xl shadow-xl overflow-hidden mt-16">
             <div className="grid grid-cols-1 lg:grid-cols-5">
               {/* Contact Info */}
-              <div className="lg:col-span-2 bg-gradient-to-br from-[#232B32] to-[#2d3741] p-8 lg:p-12">
+              <div className="lg:col-span-2 bg-gradient-to-br from-background to-secondary-bg p-8 lg:p-12">
                 <h3 className="text-2xl font-bold mb-8 text-white">
                   Contact Information
                 </h3>
 
                 <div className="space-y-8">
                   <div className="flex items-start">
-                    <div className="h-12 w-12 rounded-lg bg-[#00E2D6]/10 flex items-center justify-center mr-4 flex-shrink-0">
+                    <div className="h-12 w-12 rounded-lg bg-brand/10 flex items-center justify-center mr-4 flex-shrink-0">
                       <svg
                         xmlns="http://www.w3.org/2000/svg"
                         fill="none"
                         viewBox="0 0 24 24"
-                        stroke="#00E2D6"
-                        className="h-6 w-6"
+                        stroke="currentColor"
+                        className="h-6 w-6 text-brand"
                       >
                         <path
                           strokeLinecap="round"
@@ -116,7 +110,7 @@ export default function Home() {
                       </h4>
                       <a
                         href={`mailto:${contactInfo.contactEmail}`}
-                        className="text-[#00E2D6] hover:underline block mb-1"
+                        className="text-brand hover:underline block mb-1"
                       >
                         {contactInfo.contactEmail}
                       </a>
@@ -126,13 +120,13 @@ export default function Home() {
                     </div>
                   </div>
                   <div className="flex items-start">
-                    <div className="h-12 w-12 rounded-lg bg-[#00E2D6]/10 flex items-center justify-center mr-4 flex-shrink-0">
+                    <div className="h-12 w-12 rounded-lg bg-brand/10 flex items-center justify-center mr-4 flex-shrink-0">
                       <svg
                         xmlns="http://www.w3.org/2000/svg"
                         fill="none"
                         viewBox="0 0 24 24"
-                        stroke="#00E2D6"
-                        className="h-6 w-6"
+                        stroke="currentColor"
+                        className="h-6 w-6 text-brand"
                       >
                         <path
                           strokeLinecap="round"
@@ -148,7 +142,7 @@ export default function Home() {
                       </h4>
                       <a
                         href={`tel:${contactInfo.phone}`}
-                        className="text-[#00E2D6] hover:underline block mb-1"
+                        className="text-brand hover:underline block mb-1"
                       >
                         {contactInfo.phone}
                       </a>
@@ -159,13 +153,13 @@ export default function Home() {
                   </div>
 
                   <div className="flex items-start">
-                    <div className="h-12 w-12 rounded-lg bg-[#00E2D6]/10 flex items-center justify-center mr-4 flex-shrink-0">
+                    <div className="h-12 w-12 rounded-lg bg-brand/10 flex items-center justify-center mr-4 flex-shrink-0">
                       <svg
                         xmlns="http://www.w3.org/2000/svg"
                         fill="none"
                         viewBox="0 0 24 24"
-                        stroke="#00E2D6"
-                        className="h-6 w-6"
+                        stroke="currentColor"
+                        className="h-6 w-6 text-brand"
                       >
                         <path
                           strokeLinecap="round"
@@ -185,7 +179,7 @@ export default function Home() {
                       <h4 className="text-lg font-semibold mb-1 text-white">
                         Office
                       </h4>
-                      <p className="text-[#00E2D6] block mb-1">
+                      <p className="text-brand block mb-1">
                         {contactInfo.address}
                         {contactInfo.address1}
                         {contactInfo.city}
@@ -207,7 +201,7 @@ export default function Home() {
                       href={`${contactInfo.social.github}`}
                       target="_blank"
                       rel="noopener noreferrer"
-                      className="h-10 w-10 rounded-full bg-[#00E2D6]/10 flex items-center justify-center text-[#00E2D6] hover:bg-[#00E2D6]/20 transition-colors"
+                      className="h-10 w-10 rounded-full bg-brand/10 flex items-center justify-center text-brand hover:bg-brand/20 transition-colors"
                     >
                       <svg
                         className="w-5 h-5"
@@ -226,7 +220,7 @@ export default function Home() {
                       href={`${contactInfo.social.linkedin}`}
                       target="_blank"
                       rel="noopener noreferrer"
-                      className="h-10 w-10 rounded-full bg-[#00E2D6]/10 flex items-center justify-center text-[#00E2D6] hover:bg-[#00E2D6]/20 transition-colors"
+                      className="h-10 w-10 rounded-full bg-brand/10 flex items-center justify-center text-brand hover:bg-brand/20 transition-colors"
                     >
                       <svg
                         className="w-5 h-5"

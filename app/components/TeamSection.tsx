@@ -17,7 +17,7 @@ export default function TeamSection() {
   };
 
   return (
-    <section id="team" className="py-20 px-4 sm:px-6 lg:px-8 bg-[#2d3741]">
+    <section id="team" className="py-20 px-4 sm:px-6 lg:px-8 bg-secondary-bg">
       <div className="max-w-7xl mx-auto">
         <h2 className="section-heading text-3xl sm:text-4xl font-bold">
           Meet Our Team
@@ -45,7 +45,7 @@ export default function TeamSection() {
                 onMouseEnter={() => handleCardHover(index)}
                 onMouseLeave={handleCardLeave}
               >
-                <div className="mb-6 relative w-40 h-40 rounded-full overflow-hidden border-4 border-[#00E2D6]/30">
+                <div className="mb-6 relative w-40 h-40 rounded-full overflow-hidden border-4 border-brand/30">
                   {member.image ? (
                     member.image.startsWith("http") ? (
                       <Image
@@ -64,13 +64,13 @@ export default function TeamSection() {
                       />
                     )
                   ) : (
-                    <div className="h-full w-full rounded-full bg-[#00E2D6]/20 flex items-center justify-center">
+                    <div className="h-full w-full rounded-full bg-brand/20 flex items-center justify-center">
                       <svg
                         xmlns="http://www.w3.org/2000/svg"
                         fill="none"
                         viewBox="0 0 24 24"
-                        stroke="#00E2D6"
-                        className="h-16 w-16"
+                        stroke="currentColor"
+                        className="h-16 w-16 text-brand"
                       >
                         <path
                           strokeLinecap="round"
@@ -86,17 +86,17 @@ export default function TeamSection() {
                 <h3 className="text-2xl font-bold mb-1 text-white">
                   {member.name}
                 </h3>
-                <p className="text-[#00E2D6] font-medium mb-4">{member.role}</p>
+                <p className="text-brand font-medium mb-4">{member.role}</p>
 
-                <div className="bg-[#2d3741]/50 p-4 rounded-lg mb-6 min-h-[80px] flex items-center">
+                <div className="bg-secondary-bg/50 p-4 rounded-lg mb-6 min-h-[80px] flex items-center">
                   <p className="text-gray-300">{member.bio}</p>
                 </div>
 
-                <div className="flex flex-col items-start w-full mb-6 bg-[#2d3741]/30 p-4 rounded-lg">
+                <div className="flex flex-col items-start w-full mb-6 bg-secondary-bg/30 p-4 rounded-lg">
                   <h4 className="text-lg font-semibold mb-3 text-white flex items-center">
                     <svg
                       xmlns="http://www.w3.org/2000/svg"
-                      className="h-5 w-5 text-[#00E2D6] mr-2"
+                      className="h-5 w-5 text-brand mr-2"
                       viewBox="0 0 20 20"
                       fill="currentColor"
                     >
@@ -112,7 +112,7 @@ export default function TeamSection() {
                     {member.skills.map((skill, skillIndex) => (
                       <span
                         key={skillIndex}
-                        className="bg-[#00E2D6]/20 text-[#00E2D6] px-3 py-1 rounded-full text-sm"
+                        className="bg-brand/20 text-brand px-3 py-1 rounded-full text-sm"
                       >
                         {skill}
                       </span>
@@ -126,7 +126,7 @@ export default function TeamSection() {
                       href={member.social.twitter}
                       target="_blank"
                       rel="noopener noreferrer"
-                      className="text-gray-400 hover:text-[#00E2D6] transition-colors p-2 bg-[#2d3741]/50 rounded-full hover:bg-[#2d3741]"
+                      className="text-gray-400 hover:text-brand transition-colors p-2 bg-secondary-bg/50 rounded-full hover:bg-secondary-bg"
                       aria-label={`${member.name}'s Twitter`}
                     >
                       <svg
@@ -144,7 +144,7 @@ export default function TeamSection() {
                       href={member.social.github}
                       target="_blank"
                       rel="noopener noreferrer"
-                      className="text-gray-400 hover:text-[#00E2D6] transition-colors p-2 bg-[#2d3741]/50 rounded-full hover:bg-[#2d3741]"
+                      className="text-gray-400 hover:text-brand transition-colors p-2 bg-secondary-bg/50 rounded-full hover:bg-secondary-bg"
                       aria-label={`${member.name}'s GitHub`}
                     >
                       <svg
@@ -166,7 +166,7 @@ export default function TeamSection() {
                       href={member.social.linkedin}
                       target="_blank"
                       rel="noopener noreferrer"
-                      className="text-gray-400 hover:text-[#00E2D6] transition-colors p-2 bg-[#2d3741]/50 rounded-full hover:bg-[#2d3741]"
+                      className="text-gray-400 hover:text-brand transition-colors p-2 bg-secondary-bg/50 rounded-full hover:bg-secondary-bg"
                       aria-label={`${member.name}'s LinkedIn`}
                     >
                       <svg
@@ -188,7 +188,7 @@ export default function TeamSection() {
                       href={member.social.portfolio}
                       target="_blank"
                       rel="noopener noreferrer"
-                      className="text-gray-400 hover:text-[#00E2D6] transition-colors p-2 bg-[#2d3741]/50 rounded-full hover:bg-[#2d3741]"
+                      className="text-gray-400 hover:text-brand transition-colors p-2 bg-secondary-bg/50 rounded-full hover:bg-secondary-bg"
                       aria-label={`${member.name}'s Portfolio`}
                     >
                       <svg

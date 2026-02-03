@@ -6,7 +6,7 @@ import { services } from "../config/services";
 
 export default function Footer() {
   return (
-    <footer className="bg-[#232B32] text-white">
+    <footer className="bg-background text-white">
       {/* Main Footer */}
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16">
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-12">
@@ -31,7 +31,7 @@ export default function Footer() {
                 href={`${contactInfo.social.github}`}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="text-gray-400 hover:text-[#00E2D6] transition-colors"
+                className="text-gray-400 hover:text-brand transition-colors"
               >
                 {/* GitHub icon */}
                 <svg
@@ -51,7 +51,7 @@ export default function Footer() {
                 href={`${contactInfo.social.linkedin}`}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="text-gray-400 hover:text-[#00E2D6] transition-colors"
+                className="text-gray-400 hover:text-brand transition-colors"
               >
                 {/* LinkedIn icon */}
                 <svg
@@ -76,16 +76,8 @@ export default function Footer() {
             <ul className="space-y-3">
               <li>
                 <Link
-                  href="#team"
-                  className="text-gray-300 hover:text-[#00E2D6] transition-colors"
-                >
-                  Our Team
-                </Link>
-              </li>
-              <li>
-                <Link
                   href="#services"
-                  className="text-gray-300 hover:text-[#00E2D6] transition-colors"
+                  className="text-gray-300 hover:text-brand transition-colors"
                 >
                   Services
                 </Link>
@@ -93,7 +85,7 @@ export default function Footer() {
               <li>
                 <Link
                   href="#contact"
-                  className="text-gray-300 hover:text-[#00E2D6] transition-colors"
+                  className="text-gray-300 hover:text-brand transition-colors"
                 >
                   Contact Us
                 </Link>
@@ -109,7 +101,7 @@ export default function Footer() {
                 <li key={index}>
                   <Link
                     href="#services"
-                    className="text-gray-300 hover:text-[#00E2D6] transition-colors"
+                    className="text-gray-300 hover:text-brand transition-colors"
                   >
                     {service.title}
                   </Link>
@@ -125,7 +117,7 @@ export default function Footer() {
               <li className="flex items-start">
                 <svg
                   xmlns="http://www.w3.org/2000/svg"
-                  className="h-5 w-5 text-[#00E2D6] mr-3 mt-0.5"
+                  className="h-5 w-5 text-brand mr-3 mt-0.5"
                   fill="none"
                   viewBox="0 0 24 24"
                   stroke="currentColor"
@@ -154,7 +146,7 @@ export default function Footer() {
               <li className="flex items-start">
                 <svg
                   xmlns="http://www.w3.org/2000/svg"
-                  className="h-5 w-5 text-[#00E2D6] mr-3 mt-0.5"
+                  className="h-5 w-5 text-brand mr-3 mt-0.5"
                   fill="none"
                   viewBox="0 0 24 24"
                   stroke="currentColor"
@@ -171,7 +163,7 @@ export default function Footer() {
               <li className="flex items-start">
                 <svg
                   xmlns="http://www.w3.org/2000/svg"
-                  className="h-5 w-5 text-[#00E2D6] mr-3 mt-0.5"
+                  className="h-5 w-5 text-brand mr-3 mt-0.5"
                   fill="none"
                   viewBox="0 0 24 24"
                   stroke="currentColor"
@@ -201,19 +193,19 @@ export default function Footer() {
           <div className="mt-4 md:mt-0 flex space-x-6">
             <Link
               href="/privacy-policy"
-              className="text-gray-400 hover:text-[#00E2D6] text-sm"
+              className="text-gray-400 hover:text-brand text-sm"
             >
               Privacy Policy
             </Link>
             <Link
               href="/terms-of-service"
-              className="text-gray-400 hover:text-[#00E2D6] text-sm"
+              className="text-gray-400 hover:text-brand text-sm"
             >
               Terms of Service
             </Link>
             <Link
               href="/cookie-policy"
-              className="text-gray-400 hover:text-[#00E2D6] text-sm"
+              className="text-gray-400 hover:text-brand text-sm"
             >
               Cookie Policy
             </Link>
